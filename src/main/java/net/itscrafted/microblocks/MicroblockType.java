@@ -156,5 +156,14 @@ public class MicroblockType {
 		add("noteblock", "PixelJuke", false);
 		add("brick", "BrickInTheHead", false);
 		add("penguin", "Patty14", false);
+		add("spacehelm", "Dctr_", false);
+		add("terminal", "Hack", false);
+		add("redexclamation", "jona612", false);
+		//slimes - untested ~ full list at http://www.reddit.com/r/MinecraftHeads/comments/1twaij/list_of_colored_slimes/
+		add("md_5", "oslime", false);
+		add("AlexSuperHD", "rslime", false);
+		add("AlexSuperHD", "rslime", false);
+		add("nilaro", "gslime", false);
+		add("Deathbeam", "bslime", false);
 	}
 }
