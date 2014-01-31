@@ -35,7 +35,7 @@ public class MBGiveCommand implements CommandExecutor, TabCompleter {
 	}
 	
 	/** Add a Microblock to a player's inventory. **/
-	public void addMB(Player p, String headName, boolean safe, String microblock) {
+	public void addMB(Player p, String headName, boolean safe, String microblock, int amount) {
 		/** If safe-mode is enabled, check that the head is safe. **/
 		if(mb.getConfig().getBoolean("safe-mode") == true && !safe) {
 				p.sendMessage(ChatColor.GOLD + "This is an " + ChatColor.RED + "unsafe head" + ChatColor.GOLD + 
@@ -43,7 +43,9 @@ public class MBGiveCommand implements CommandExecutor, TabCompleter {
 				p.sendMessage(ChatColor.GOLD + "If you wish to use it, disable " + ChatColor.RED +
 						"'safe-mode' " + ChatColor.GOLD + "in the config.");
 		}else {
-				p.getInventory().addItem(mblock(new ItemStack(Material.SKULL_ITEM, 1, (byte) 3), headName, microblock));
+				ItemStack block = mblock(new ItemStack(Material.SKULL_ITEM, 1, (byte) 3), headName, microblock);
+				block.setAmount(amount);
+				p.getInventory().addItem(block);
 				p.sendMessage(ChatColor.GOLD + "You have been given the " + ChatColor.GRAY + microblock
 						+ ChatColor.GOLD + " microblock.");
 		}
@@ -61,18 +63,18 @@ public class MBGiveCommand implements CommandExecutor, TabCompleter {
 				p.sendMessage(ChatColor.RED + "You do not have permission for this.");
 			}else {
 				if(args.length == 0) {
-					p.sendMessage(ChatColor.RED + "Usage: /givemb <player> <microblock>");
+					p.sendMessage(ChatColor.RED + "Usage: /givemb <player> <microblock> [amount]");
 				}else if(args.length == 1) {
-					p.sendMessage(ChatColor.RED + "Usage: /givemb <player> <microblock>");
+					p.sendMessage(ChatColor.RED + "Usage: /givemb <player> <microblock> [amount]");
 				}else if(args.length == 2) {
-					/** Otherwise, assume the player is trying to spawn a microblock, or get help. **/
+					/** Otherwise, assume the player is trying to give a single microblock. **/
 					Player reciever = Bukkit.getPlayerExact(args[0]);
 					
 					if(reciever == null || args[0].length() >= 20) {
 						p.sendMessage(ChatColor.RED + args[0] + " is not online or is an invalid player name.");
 					}else if(MicroblockType.BLOCK_MAP.containsKey(args[1].toLowerCase())) {
 						MicroblockType mbt = MicroblockType.BLOCK_MAP.get(args[1].toLowerCase());
-						addMB(reciever, mbt.getPlayerName(), mbt.isSafe(), mbt.getBlockName());
+						addMB(reciever, mbt.getPlayerName(), mbt.isSafe(), mbt.getBlockName(), 1);
 						if (mbt.getBlockName().equalsIgnoreCase("parrot")) {
 							reciever.sendMessage(ChatColor.GOLD + "This microblock is " + ChatColor.GRAY + "diagonal" + ChatColor.GOLD + ".");
 						}
@@ -82,9 +84,30 @@ public class MBGiveCommand implements CommandExecutor, TabCompleter {
 						p.sendMessage(ChatColor.RED + "Unknown microblock!");
 						p.sendMessage(ChatColor.RED + "Use /mb for a list of microblocks.");
 					}
+				}else if(args.length == 3) {
+					/** Otherwise, assume the player is trying to give multiple microblocks. **/
+					Player reciever = Bukkit.getPlayerExact(args[0]);
 					
-				}else if(args.length >= 3) {
-					p.sendMessage(ChatColor.RED + "Usage: /givemb <player> <microblock>");
+					if(reciever == null || args[0].length() >= 20) {
+						p.sendMessage(ChatColor.RED + args[0] + " is not online or is an invalid player name.");
+					}else if(MicroblockType.BLOCK_MAP.containsKey(args[1].toLowerCase())) {
+						MicroblockType mbt = MicroblockType.BLOCK_MAP.get(args[1].toLowerCase());
+						try {
+							addMB(reciever, mbt.getPlayerName(), mbt.isSafe(), mbt.getBlockName(), Integer.parseInt(args[2]));
+							if (mbt.getBlockName().equalsIgnoreCase("parrot")) {
+								reciever.sendMessage(ChatColor.GOLD + "This microblock is " + ChatColor.GRAY + "diagonal" + ChatColor.GOLD + ".");
+							}
+							p.sendMessage(ChatColor.GOLD + "You have given " + ChatColor.GRAY + args[0] + ChatColor.GOLD
+									+ " " + args[2] + " of the " + ChatColor.GRAY + args[1] + ChatColor.GOLD + " microblock.");
+						}catch(NumberFormatException e) {
+							p.sendMessage(ChatColor.RED + "'" + args[2] + "' is not a valid number.");
+						}
+						}else {
+							p.sendMessage(ChatColor.RED + "Unknown microblock!");
+							p.sendMessage(ChatColor.RED + "Use /mb for a list of microblocks.");
+						}
+				}else if(args.length >= 4) {
+					p.sendMessage(ChatColor.RED + "Usage: /givemb <player> <microblock> [amount]");
 				}
 			}
 		}else {
