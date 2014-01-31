@@ -44,7 +44,7 @@ public class MicroblockType {
 		add("monitor", "Alistor", false);
 		add("blaze", "MHF_Blaze", true);
 		add("bookshelf", "BowAimbot", true);
-		add("ice", "icytouch", false);
+		add("ice", "icytouch", true);
 		add("ironchest", "godman21", false);
 		add("furnace", "NegativeZeroTV", false);
 		//add("spawner", "GAMEZENMASTER", true);
@@ -165,5 +165,6 @@ public class MicroblockType {
 		add("AlexSuperHD", "rslime", false);
 		add("nilaro", "gslime", false);
 		add("Deathbeam", "bslime", false);
+		add("monkey354", "commandblock", true);
 	}
 }
