@@ -71,7 +71,7 @@ public class MBGiveCommand implements CommandExecutor, TabCompleter {
 					Player reciever = Bukkit.getPlayerExact(args[0]);
 					
 					if(reciever == null || args[0].length() >= 20) {
-						p.sendMessage(ChatColor.RED + args[0] + " is not online or is an invalid player name.");
+						p.sendMessage(ChatColor.RED + "'" + args[0] + "' is not online or is an invalid player name.");
 					}else if(MicroblockType.BLOCK_MAP.containsKey(args[1].toLowerCase())) {
 						MicroblockType mbt = MicroblockType.BLOCK_MAP.get(args[1].toLowerCase());
 						addMB(reciever, mbt.getPlayerName(), mbt.isSafe(), mbt.getBlockName(), 1);
