@@ -170,7 +170,7 @@ public class MicroblockType {
 		add("socialicons", "titigogo70", false);
 		add("redstonetorch", "RedstoneMakerMe", false);
 		add("portal", "TorchPvP", false);
-		add("package", "ku288", false);
+		add("package", "ku228", false);
 		add("bedrock", "BedrockSolid", true);
 	}
 }
