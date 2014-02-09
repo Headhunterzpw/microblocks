@@ -160,19 +160,17 @@ public class MicroblockType {
 		add("terminal", "Hack", false);
 		add("redexclamation", "jona612", false);
 		//slimes - untested ~ full list at http://www.reddit.com/r/MinecraftHeads/comments/1twaij/list_of_colored_slimes/
-		add("md_5", "oslime", false);
-		add("AlexSuperHD", "rslime", false);
-		add("AlexSuperHD", "rslime", false);
-		add("nilaro", "gslime", false);
-		add("Deathbeam", "bslime", false);
-		add("monkey354", "commandblock", true);
+		add("oslime", "md_5", false);
+		add("rslime", "AlexSuperHD", false);
+		add("gslime", "nilaro", false);
+		add("bslime", "Deathbeam", false);
+		add("commandblock", "monkey354", true);
 		//end of slimes
-		add("IronBrin", "ironore", false);
-		add("titigogo70", "socialicons", false);
-		add("RedstoneMakerMe", "redstonetorch", false);
-		add("TorchPvP", "portal", false);
-		add("ku288", "package", false);
-		add("BedrockSolid", "bedrock", true);
-		add("ByVoltz", "spacehelm", false);
+		add("ironore", "IronBrin", false);
+		add("socialicons", "titigogo70", false);
+		add("redstonetorch", "RedstoneMakerMe", false);
+		add("portal", "TorchPvP", false);
+		add("package", "ku288", false);
+		add("bedrock", "BedrockSolid", true);
 	}
 }
