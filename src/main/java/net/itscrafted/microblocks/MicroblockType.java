@@ -166,5 +166,13 @@ public class MicroblockType {
 		add("nilaro", "gslime", false);
 		add("Deathbeam", "bslime", false);
 		add("monkey354", "commandblock", true);
+		//end of slimes
+		add("IronBrin", "ironore", false);
+		add("titigogo70", "socialicons", false);
+		add("RedstoneMakerMe", "redstonetorch", false);
+		add("TorchPvP", "portal", false);
+		add("ku288", "package", false);
+		add("BedrockSolid", "bedrock", true);
+		add("ByVoltz", "spacehelm", false);
 	}
 }
