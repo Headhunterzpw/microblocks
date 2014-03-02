@@ -129,7 +129,7 @@ public class MicroblockType {
 		add("tnt2", "MHF_TNT2", true);
 		add("tnt", "MHF_TNT", true);
 		//add("toaster", "pologobbyboy", false);
-		add("toiletpaper", "Ethegj", false);
+		//add("toiletpaper", "Ethegj", false);
 		add("tv", "Metroidling", false);
 		add("villager", "MHF_Villager", true);
 		add("ghast", "MHF_Ghast", true);
