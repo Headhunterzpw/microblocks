@@ -161,7 +161,6 @@ public class MicroblockType {
 		add("terminal", "Hack", false);
 		add("redexclamation", "jona612", false);
 		add("oslime", "md_5", false);
-		add("rslime", "AlexSuperHD", false);
 		add("gslime", "nilaro", false);
 		add("bslime", "Deathbeam", false);
 		add("commandblock", "monkey354", true);
