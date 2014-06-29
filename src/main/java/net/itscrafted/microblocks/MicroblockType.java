@@ -34,6 +34,13 @@ public class MicroblockType {
 		PLAYER_MAP.put(playerName, mb);
 	}
 	
+	public static void addExternal(String blockName, String playerName, boolean safe) {
+		blockName = blockName.toLowerCase();
+		MicroblockType mb = new MicroblockType(blockName, playerName, safe);
+		BLOCK_MAP.put(blockName, mb);
+		PLAYER_MAP.put(playerName, mb);
+	}
+	
 	static {
 		add("apple", "MHF_Apple", true);
 		add("arrowdown", "MHF_ArrowDown", true);
@@ -153,8 +160,8 @@ public class MicroblockType {
 		add("spacehelm", "Dctr_", false);
 		add("terminal", "Hack", false);
 		add("redexclamation", "jona612", false);
-		//Slimes: Possible errors here, yet to test.
 		add("oslime", "md_5", false);
+		add("rslime", "AlexSuperHD", false);
 		add("gslime", "nilaro", false);
 		add("bslime", "Deathbeam", false);
 		add("commandblock", "monkey354", true);
