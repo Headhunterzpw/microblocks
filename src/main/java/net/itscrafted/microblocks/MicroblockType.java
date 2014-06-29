@@ -45,9 +45,7 @@ public class MicroblockType {
 		add("blaze", "MHF_Blaze", true);
 		add("bookshelf", "BowAimbot", true);
 		add("ice", "icytouch", true);
-		add("ironchest", "godman21", false);
 		add("furnace", "NegativeZeroTV", false);
-		//add("spawner", "GAMEZENMASTER", true);
 		add("qcube", "jarrettgabe", true);
 		add("cactus", "MHF_Cactus", true);
 		add("cake", "MHF_Cake", true);
@@ -128,8 +126,6 @@ public class MicroblockType {
 		add("taco", "Crunchy_Taco34", false);
 		add("tnt2", "MHF_TNT2", true);
 		add("tnt", "MHF_TNT", true);
-		//add("toaster", "pologobbyboy", false);
-		//add("toiletpaper", "Ethegj", false);
 		add("tv", "Metroidling", false);
 		add("villager", "MHF_Villager", true);
 		add("ghast", "MHF_Ghast", true);
@@ -142,11 +138,9 @@ public class MicroblockType {
 		add("parrot", "Luk3011", false);
 		add("pokeball", "Chuzard", false);
 		add("cookie", "QuadratCookie", false);
-		//add("workbench", "Russellgoo97", false);
 		add("orangewool", "titou36", false);
 		add("stonebrick", "Cakers", false);
 		add("swskeleton", "lesto123", false);
-		//add("swzombie", "maximxc", false);
 		add("goldblock", "StackedGold", false);
 		add("fox", "hugge75", false);
 		add("potato", "CraftPotato13", false);
@@ -159,13 +153,12 @@ public class MicroblockType {
 		add("spacehelm", "Dctr_", false);
 		add("terminal", "Hack", false);
 		add("redexclamation", "jona612", false);
-		//slimes - untested ~ full list at http://www.reddit.com/r/MinecraftHeads/comments/1twaij/list_of_colored_slimes/
+		//Slimes: Possible errors here, yet to test.
 		add("oslime", "md_5", false);
 		add("rslime", "AlexSuperHD", false);
 		add("gslime", "nilaro", false);
 		add("bslime", "Deathbeam", false);
 		add("commandblock", "monkey354", true);
-		//end of slimes
 		add("ironore", "IronBrin", false);
 		add("socialicons", "titigogo70", false);
 		add("redstonetorch", "RedstoneMakerMe", false);
