@@ -9,7 +9,7 @@ public class MicroblockAPI {
 	
 	/**
 	 * Add a head to the list of available <b>Microblocks</b>.
-	 * <hr>
+	 * <br>
 	 * @param blockName - <em>The display name of the block.</em>
 	 * @param playerName - <em>The player associated with the block.</em>
 	 * @param safe - <em>Will this head change in the foreseeable future?</em>
@@ -22,7 +22,7 @@ public class MicroblockAPI {
 	/**
 	 * Give a <b>Microblock</b> to a specific player, if the Microblock exists.
 	 * <em>This is a very hacky method, and I recommend just calling /givemb from your plugin.</em>
-	 * <hr>
+	 * <br>
 	 * @param player - <em>The player to recieve the block.</em>
 	 * @param mbName - <em>The name of the Microblock to be given.</em>
 	 */
